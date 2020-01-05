@@ -20,6 +20,7 @@ const handler = StripeCheckout.configure({
     let response, data;
 
     try {
+      console.warn('try');
       response = await fetch(LAMBDA_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify({
@@ -46,10 +47,13 @@ const handler = StripeCheckout.configure({
     $messageBox.querySelector('h2').innerHTML = message;
 
     console.log(data);
+
   }
 });
 
 $button.addEventListener('click', () => {
+
+  console.warn('on click');
 
   setTimeout(() => {
     $button.innerHTML = 'Waiting for response...';

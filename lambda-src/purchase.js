@@ -46,7 +46,7 @@ exports.handler = async function(event) {
         amount: data.amount,
         source: data.token.id,
         receipt_email: data.token.email,
-        description: `charge for a widget`
+        description: `charge for a new widget`
       },
       {
         idempotency_key: data.idempotency_key
@@ -73,7 +73,7 @@ exports.handler = async function(event) {
     headers,
     body: JSON.stringify({
       status,
-      message: "Charge successfully created!"
+      message: "Charge was successfully created"
     })
   };
 };
