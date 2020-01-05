@@ -61,7 +61,7 @@ $button.addEventListener('click', () => {
 
   handler.open({
     amount,
-    name: 'Test Shop',
-    description: 'A Fantastic New Widget'
+    name: 'Eau Natural',
+    description: 'Lip Balm'
   });
 });
