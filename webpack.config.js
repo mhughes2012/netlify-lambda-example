@@ -3,6 +3,20 @@ require("dotenv").config();
 const webpack = require("webpack");
 
 module.exports = {
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env", "@babel/react"]
+          }
+        }
+      }
+    ]
+  },
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   entry: "./src/front-end.js",
   output: {

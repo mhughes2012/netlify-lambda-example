@@ -1,0 +1,95 @@
+{
+  "store_name": "Eau Natural",
+  "store_slug": "react-stripe-store",
+  "api_key": "pk_test_AJJ09Njk9gXWCkJV4kdZGiDC00ufnarOfQ",
+  "colors": {
+    "primary": {
+      "main": "#2aada8",
+      "dark": "#3b8481",
+      "contrastText": "#FFF"
+    },
+    "secondary": {
+      "main": "#2aada8"
+    }
+  },
+  "products": [
+    {
+      "name": "Deodorant ",
+      "url": "deodorant",
+      "stripe_id": "101",
+      "price": "10",
+      "description": "Organic and Natural ingredients",
+      "photos": ["deodorant.jpg"],
+      "details": [
+        "non-aluminum baking soda"
+
+      ]
+    },
+    {
+      "name": "Lip Balm ",
+      "url": "lipbalm",
+      "stripe_id": "102",
+      "price": "3.50",
+      "description": "What a great product!",
+      "photos": ["lipbalm.jpg", "lipbalm2.jpg"],
+      "details": [
+        "Organic and Natural ingredients"
+
+      ],
+      "variants": [
+        {
+          "name": "Flavour",
+          "options":[
+            {"label": "Vanilla", "price" : "3.50"},
+            {"label": "Cherry", "price" : "3.50"},
+            {"label": "Plain", "price" : "3.50"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lip Balm - 3 Pack",
+      "url": "lipbalm",
+      "stripe_id": "103",
+      "price": "10",
+      "description": "Save with a 3 pack!",
+      "photos": ["lipbalm.jpg"],
+      "details": [
+        "Organic and Natural ingredients"
+
+      ],
+      "variants": [
+        {
+          "name": "Flavour",
+          "options":[
+            {"label": "Vanilla"},
+            {"label": "Cherry"},
+            {"label": "Plain"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lip Balm - 10 Pack",
+      "url": "lipbalm",
+      "stripe_id": "104",
+      "price": "30",
+      "description": "Save even more with a 10 pack!",
+      "photos": ["lipbalm.jpg"],
+      "details": [
+        "Organic and Natural ingredients"
+
+      ],
+      "variants": [
+        {
+          "name": "Flavour",
+          "options":[
+            {"label": "Vanilla"},
+            {"label": "Cherry"},
+            {"label": "Plain"}
+          ]
+        }
+      ]
+    }
+  ]
+}

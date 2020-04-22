@@ -1,12 +1,29 @@
 import uuid from 'uuid/v4';
 
-const amount = 1023;
+const amount =   parseFloat(document.getElementById("total").innerHTML);
+console.warn('a', amount);
 const $messageBox = document.getElementById('messageBox');
 const $button = document.querySelector('button');
 
 function resetButtonText() {
   $button.innerHTML = 'Click to Buy! <strong>$10</strong>';
 }
+
+var stripe = Stripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+var checkoutButton = document.querySelector('#checkout-button');
+checkoutButton.addEventListener('click', function () {
+  stripe.redirectToCheckout({
+    items: [{
+      // Define the product and SKU in the Dashboard first, and use the SKU
+      // ID in your client-side code.
+      sku: 'sku_123',
+      quantity: 1
+    }],
+    successUrl: 'https://www.example.com/success',
+    cancelUrl: 'https://www.example.com/cancel'
+  });
+});
 
 const handler = StripeCheckout.configure({
   key: STRIPE_PUBLISHABLE_KEY,
@@ -20,7 +37,6 @@ const handler = StripeCheckout.configure({
     let response, data;
 
     try {
-      console.warn('try');
       response = await fetch(LAMBDA_ENDPOINT, {
         method: 'POST',
         body: JSON.stringify({
@@ -47,13 +63,10 @@ const handler = StripeCheckout.configure({
     $messageBox.querySelector('h2').innerHTML = message;
 
     console.log(data);
-
   }
 });
 
 $button.addEventListener('click', () => {
-
-  console.warn('on click');
 
   setTimeout(() => {
     $button.innerHTML = 'Waiting for response...';

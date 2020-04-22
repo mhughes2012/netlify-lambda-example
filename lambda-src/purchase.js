@@ -42,11 +42,11 @@ exports.handler = async function(event) {
   try {
     charge = await stripe.charges.create(
       {
-        currency: "usd",
+        currency: "cad",
         amount: data.amount,
         source: data.token.id,
         receipt_email: data.token.email,
-        description: `charge for a new widget`
+        description: `charge for a lip balm`
       },
       {
         idempotency_key: data.idempotency_key
