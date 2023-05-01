@@ -35,6 +35,6 @@
     "netlify-lambda": "^1.6.3",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.11.3"
   }
 }
